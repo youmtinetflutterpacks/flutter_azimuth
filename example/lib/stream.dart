@@ -4,12 +4,13 @@ class StreamWidget<T> extends StatelessWidget {
   final Widget Function(T snapshot) child;
   final Stream<T>? stream;
 
-  const StreamWidget({Key? key, required this.child, required this.stream})
-      : super(key: key);
+  const StreamWidget({Key? key, required this.child, required this.stream}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    /// Stream builder of T
     return StreamBuilder<T>(
+      /// Stream builder of T
       stream: stream,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -41,6 +42,5 @@ class StreamWidget<T> extends StatelessWidget {
     );
   }
 
-  Center errorConnection() =>
-      const Center(child: Icon(Icons.wifi_off, color: Colors.red));
+  Center errorConnection() => const Center(child: Icon(Icons.wifi_off, color: Colors.red));
 }

@@ -16,7 +16,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  /// check if device has sensors
   int? haveSensor;
+
+  /// check if device has sensors
   late String sensorType;
 
   @override
