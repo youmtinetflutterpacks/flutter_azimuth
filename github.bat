@@ -1,1 +1,1 @@
-git add . && git commit -m "version" && git push -u origin main
+git add . && git commit -m "Video Splash Screen" && git push -u origin main

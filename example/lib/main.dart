@@ -1,21 +1,42 @@
 import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_azimuth_example/splash.dart';
 import 'dart:async';
 
 import 'package:flutter_azimuth_example/stream.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ExapleAzimuthApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ExapleAzimuthApp extends StatelessWidget {
+  const ExapleAzimuthApp({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return const CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Azimuth Example',
+      theme: CupertinoThemeData(
+        primaryColor: Color(0xFF771089),
+        barBackgroundColor: Color(0xFF171717),
+        brightness: Brightness.dark,
+      ),
+      home: NativeSplashVideo(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
+class ExapleAzimuthBodyApp extends StatefulWidget {
+  const ExapleAzimuthBodyApp({Key? key}) : super(key: key);
+
+  @override
+  _ExapleAzimuthBodyAppState createState() => _ExapleAzimuthBodyAppState();
+}
+
+class _ExapleAzimuthBodyAppState extends State<ExapleAzimuthBodyApp> {
   /// check if device has sensors
   int? haveSensor;
 
@@ -77,29 +98,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Azimuth Example',
-      theme: const CupertinoThemeData(
-        primaryColor: Color(0xFF771089),
-        barBackgroundColor: CupertinoColors.darkBackgroundGray,
-        brightness: Brightness.dark,
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("SensorType: " + sensorType),
       ),
-      home: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text("SensorType: " + sensorType),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              StreamWidget<int?>(
-                stream: FlutterAzimuth.azimuthStream,
-                child: (snapshot) {
-                  /* double size2 = 300.0;
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            StreamWidget<int?>(
+              stream: FlutterAzimuth.azimuthStream,
+              child: (snapshot) {
+                /* double size2 = 300.0;
                   var factor = (13.5 / 50); */
-                  return Column(
-                    children: [
-                      Stack(
+                return Column(
+                  children: [
+                    Hero(
+                      tag: 'fluttercompass',
+                      child: Stack(
                         alignment: Alignment.center,
                         children: [
                           const CompassBackground(),
@@ -109,22 +124,22 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ],
                       ),
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          RotationTransition(
-                            turns: AlwaysStoppedAnimation(-snapshot / 360),
-                            child: const CompassBackground(),
-                          ),
-                          const CompassForeground(),
-                        ],
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ],
-          ),
+                    ),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        RotationTransition(
+                          turns: AlwaysStoppedAnimation(-snapshot / 360),
+                          child: const CompassBackground(),
+                        ),
+                        const CompassForeground(),
+                      ],
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
