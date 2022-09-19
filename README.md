@@ -5,10 +5,15 @@
 
 A Flutter azimuth plugin which provides easy access to azimuth angle, to build awesome compass ([Position sensors](https://developer.android.com/guide/topics/sensors/sensors_position) or if not available the [Position sensors](https://developer.android.com/guide/topics/sensors/sensors_position) on Android and [azimuth](https://developer.apple.com/documentation/pencilkit/pkstrokepoint/3595300-azimuth) on iOS).
 
+![Image](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true)
+<video width="320" height="240" controls>
+  <source src="https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true" type="video/mp4">
+</video>
+
+
 ## Features
 
 * Get the angle of azimuth;
-| ![Image](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![Video](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true)
 
 ### Example
 
