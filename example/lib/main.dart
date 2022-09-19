@@ -1,7 +1,7 @@
+import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:async';
 
-import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter_azimuth_example/stream.dart';
 
 void main() {
