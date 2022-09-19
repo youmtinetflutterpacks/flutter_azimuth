@@ -1,6 +1,6 @@
 name: flutter_azimuth
 description: A Flutter Compass Tools Implementation
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/ymrabti
 
 environment:
