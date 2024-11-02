@@ -1,1 +1,0 @@
-git add . && git commit -m "Video Splash Screen" && git push -u origin main

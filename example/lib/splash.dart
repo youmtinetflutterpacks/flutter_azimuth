@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_azimuth_example/main.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,6 +12,8 @@ class NativeSplashVideo extends StatefulWidget {
 
 class _NativeSplashVideoState extends State<NativeSplashVideo> {
   late VideoPlayerController _controller;
+  bool _ended = false;
+
   @override
   void initState() {
     _controller = VideoPlayerController.asset('assets/video-splash.mp4')
@@ -27,14 +30,29 @@ class _NativeSplashVideoState extends State<NativeSplashVideo> {
   }
 
   _playVideo() async {
-    _controller.play();
-    await Future.delayed(const Duration(seconds: 3));
-    Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(
-        builder: (contxt) => const ExapleAzimuthBodyApp(),
-      ),
-      (route) => false,
-    );
+    await _controller.play();
+    _controller.addListener(() async {
+      bool ended = _controller.value.position == _controller.value.duration;
+      if (ended) {
+        if (!_ended) {
+          setState(() {
+            _ended = ended;
+          });
+        } else {
+          await SystemChrome.setEnabledSystemUIMode(
+            SystemUiMode.manual,
+            overlays: SystemUiOverlay.values,
+          );
+          if (!mounted) return;
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (contxt) => const ExapleAzimuthBodyApp(),
+            ),
+            (route) => false,
+          );
+        }
+      }
+    });
   }
 
   @override

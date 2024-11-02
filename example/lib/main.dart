@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_azimuth_example/splash.dart';
@@ -5,14 +6,14 @@ import 'dart:async';
 
 import 'package:flutter_azimuth_example/stream.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(const ExapleAzimuthApp());
 }
 
 class ExapleAzimuthApp extends StatelessWidget {
-  const ExapleAzimuthApp({
-    Key? key,
-  }) : super(key: key);
+  const ExapleAzimuthApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ExapleAzimuthBodyApp extends StatefulWidget {
   const ExapleAzimuthBodyApp({Key? key}) : super(key: key);
 
   @override
-  _ExapleAzimuthBodyAppState createState() => _ExapleAzimuthBodyAppState();
+  State<ExapleAzimuthBodyApp> createState() => _ExapleAzimuthBodyAppState();
 }
 
 class _ExapleAzimuthBodyAppState extends State<ExapleAzimuthBodyApp> {
@@ -100,7 +101,7 @@ class _ExapleAzimuthBodyAppState extends State<ExapleAzimuthBodyApp> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("SensorType: " + sensorType),
+        middle: Text("SensorType: $sensorType"),
       ),
       child: SingleChildScrollView(
         child: Column(
