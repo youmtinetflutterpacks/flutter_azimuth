@@ -1,7 +1,9 @@
 name: flutter_azimuth_example
 description: Demonstrates how to use the flutter_azimuth plugin.
 
-publish_to: 'none' 
+publish_to: none
+
+version: 1.1.0
 
 environment:
   sdk: ^3.1.0
