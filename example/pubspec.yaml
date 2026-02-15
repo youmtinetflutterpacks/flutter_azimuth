@@ -3,7 +3,7 @@ description: Demonstrates how to use the flutter_azimuth plugin.
 
 publish_to: none
 
-version: 3.10.8
+version: 3.38.9
 
 environment:
   sdk: ^3.10.8
