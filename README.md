@@ -1,21 +1,30 @@
 # Flutter Azimuth Plugin
 
-
 [![pub package](https://img.shields.io/pub/v/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth) ![Build status](https://github.com/ymrabti/flutter_azimuth/workflows/flutter_azimuth/badge.svg?branch=main) [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart) [![codecov](https://codecov.io/gh/ymrabti/flutter_azimuth/branch/main/graph/badge.svg)](https://codecov.io/gh/ymrabti/flutter_azimuth)
 
-A Flutter azimuth plugin which provides easy access to azimuth angle, to build awesome compass ([Position sensors](https://developer.android.com/guide/topics/sensors/sensors_position) or if not available the [Position sensors](https://developer.android.com/guide/topics/sensors/sensors_position) on Android and [azimuth](https://developer.apple.com/documentation/pencilkit/pkstrokepoint/3595300-azimuth) on iOS).
+Flutter plugin for reading the device azimuth to build compass-like experiences. Uses the available position sensors on Android and azimuth data on iOS.
 
 ![Image](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true)
-<video width="320" height="240" controls>
-  <source src="https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true" type="video/mp4">
-</video>
 
+## Versioning policy
+
+- The package version mirrors the minimum supported Flutter version. Example: release `3.10.8` requires Flutter `3.10.8` or newer.
+- When you upgrade Flutter, bump to the matching `flutter_azimuth` version to stay compatible.
+
+## Install
+
+Add the package that matches your Flutter version:
+
+```yaml
+dependencies:
+  flutter_azimuth: 3.10.8
+```
 
 ## Features
 
-* Get the angle of azimuth;
+- Get the angle of azimuth as a stream for compass UIs.
 
-### Example
+## Example
 
 The code below shows an example on how to acquire the current position of the device, including checking if the location services are enabled and checking / requesting permission to access the position of the device:
 

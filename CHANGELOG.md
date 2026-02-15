@@ -1,3 +1,10 @@
+## 3.10.8 - 2026-02-15
+
+- Align package version with minimum supported Flutter version (3.10.8).
+- Raise Dart SDK constraint to ^3.10.8 across the plugin and example app.
+- Update example app version to 3.10.8 to mirror the plugin release.
+- Document the Flutter-aligned versioning policy in the README.
+
 ## 1.1.0
 
 - Target Android SDK 34.
