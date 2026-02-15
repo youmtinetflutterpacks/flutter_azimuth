@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_azimuth_example/splash.dart';
 import 'dart:async';
 
 import 'package:flutter_azimuth_example/stream.dart';
@@ -25,7 +24,7 @@ class ExapleAzimuthApp extends StatelessWidget {
         barBackgroundColor: Color(0xFF171717),
         brightness: Brightness.dark,
       ),
-      home: NativeSplashVideo(),
+      home: ExapleAzimuthBodyApp(),
     );
   }
 }

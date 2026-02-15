@@ -16,25 +16,26 @@ dependencies:
     path: ../
 
   cupertino_icons: ^1.0.8
-  video_player: ^2.8.5
 
 flutter_native_splash:
   color: "#000000"
-  image: assets/icon-dark.png
+  image: images/icon-dark.png
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
 
 flutter_icons:
-  image_path: "assets/icon-dark.png" 
+  image_path: "images/icon-dark.png" 
   android: true
   ios: true
   remove_alpha_ios: true
   adaptive_icon_background: "#FF771089"
-  adaptive_icon_foreground: assets/icon-dark.png
+  adaptive_icon_foreground: images/icon-dark.png
 
 flutter:
 

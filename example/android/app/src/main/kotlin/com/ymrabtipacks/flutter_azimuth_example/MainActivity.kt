@@ -1,0 +1,5 @@
+package com.ymrabtipacks.flutter_azimuth_example
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()

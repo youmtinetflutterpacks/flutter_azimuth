@@ -8,12 +8,13 @@
 .buildlog/
 .history
 .svn/
-
+demo/
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
+android1/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -27,3 +28,6 @@
 .dart_tool/
 .packages
 build/
+
+# FVM Version Cache
+.fvm/
