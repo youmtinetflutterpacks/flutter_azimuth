@@ -1,10 +1,24 @@
-# Flutter Azimuth Plugin
+<div align="center">
 
-[![pub package](https://img.shields.io/pub/v/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth) ![Build status](https://github.com/ymrabti/flutter_azimuth/workflows/flutter_azimuth/badge.svg?branch=main) [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart) [![codecov](https://codecov.io/gh/ymrabti/flutter_azimuth/branch/main/graph/badge.svg)](https://codecov.io/gh/ymrabti/flutter_azimuth)
+# Flutter Azimuth Plugin
+[![pub package](https://img.shields.io/pub/v/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth)
+[![pub likes](https://img.shields.io/pub/likes/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth/score)
+[![pub points](https://img.shields.io/pub/points/flutter_azimuth.svg?color=blue)](https://pub.dev/packages/flutter_azimuth/score)
+[![platform](https://img.shields.io/badge/platform-flutter-blue)](https://flutter.dev)
+
+[![GitHub stars](https://img.shields.io/github/stars/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Stars)](https://github.com/ymrabti/flutter_azimuth/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Issues)](https://github.com/ymrabti/flutter_azimuth/issues)
+[![GitHub license](https://img.shields.io/github/license/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=License)](https://github.com/ymrabti/flutter_azimuth/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Last%20Commit)](https://github.com/ymrabti/flutter_azimuth/commits/main)
+
+
+[![Build status](https://github.com/ymrabti/flutter_azimuth/workflows/Publish%20to%20pub.dev/badge.svg?style=flat&logo=github&colorB=&label=Build)](https://github.com/youmtinetflutterpacks/flutter_azimuth)
+
+</div>
 
 Flutter plugin for reading the device azimuth to build compass-like experiences. Uses the available position sensors on Android and azimuth data on iOS.
 
-![Image](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![](https://github.com/ymrabti/flutter_azimuth/blob/main/demogif.mp4?raw=true)
+![Image](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/demogif.mp4?raw=true)
 
 ## Versioning policy
 
@@ -17,7 +31,7 @@ Add the package that matches your Flutter version:
 
 ```yaml
 dependencies:
-  flutter_azimuth: 3.10.8
+  flutter_azimuth: 3.41.1
 ```
 
 ## Features
@@ -188,7 +202,23 @@ class CompassForeground extends StatelessWidget {
 Please file any issues, bugs or feature requests as an issue on our [GitHub](https://github.com/ymrabti/flutter_azimuth/issues) page. Commercial support is available, you can contact us at <hello@baseflow.com>.
 
 
+## 🔗 More Packages
 
-## Author
+- [Power Geojson](https://pub.dev/packages/power_geojson)
+- [Popup Menu 2](https://pub.dev/packages/popup_menu_2)
+- [Map Contextual Menu](https://pub.dev/packages/longpress_popup)
+- [Simple Logger](https://pub.dev/packages/console_tools)
 
-This Azimuth plugin for Flutter is developed by [ymrabti](https://baseflow.com).
+---
+
+## 👨‍💻 Developer Card
+
+<div align="center">
+    <img src="https://avatars.githubusercontent.com/u/47449165?v=4" alt="Younes M'rabti avatar" width="120" height="120" style="border-radius: 50%;" />
+
+### Younes M'rabti
+
+📧 Email: [admin@youmti.net](mailto:admin@youmti.net)  
+🌐 Website: [youmti.net](https://www.youmti.net/)  
+💼 LinkedIn: [younesmrabti1996](https://www.linkedin.com/in/younesmrabti1996/)
+</div>

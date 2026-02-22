@@ -1,3 +1,6 @@
+## 3.41.1 - 2026-02-22
+- Update plugin version to 3.41.1 to mirror the Flutter version.
+
 ## 3.38.9 - 2026-02-15
 
 - Release with full iOS CoreLocation implementation for azimuth streaming and sensor availability checks.
