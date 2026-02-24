@@ -1,6 +1,5 @@
 <div align="center">
 
-# Flutter Azimuth Plugin
 [![pub package](https://img.shields.io/pub/v/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth)
 [![pub likes](https://img.shields.io/pub/likes/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth/score)
 [![pub points](https://img.shields.io/pub/points/flutter_azimuth.svg?color=blue)](https://pub.dev/packages/flutter_azimuth/score)
@@ -14,11 +13,13 @@
 
 [![Build status](https://github.com/ymrabti/flutter_azimuth/workflows/Publish%20to%20pub.dev/badge.svg?style=flat&logo=github&colorB=&label=Build)](https://github.com/youmtinetflutterpacks/flutter_azimuth)
 
+&nbsp; 📦 [Download the latest APK](https://github.com/ymrabti/flutter_azimuth/releases/latest/download/flutter_azimuth_demo-release-universal.apk)
+
 </div>
 
 Flutter plugin for reading the device azimuth to build compass-like experiences. Uses the available position sensors on Android and azimuth data on iOS.
 
-![Image](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/demogif.gif?raw=true) | ![](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/demogif.mp4?raw=true)
+![Image](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/demogif.gif?raw=true)
 
 ## Versioning policy
 

@@ -1,3 +1,8 @@
+## 3.41.1+1 - 2026-02-22
+- Update plugin version to 3.41.1+1 to mirror the Flutter version.
+- Add CI/CD workflow to publish to pub.dev on new releases.
+- Add Documentation for the package API.
+
 ## 3.41.1 - 2026-02-22
 - Update plugin version to 3.41.1 to mirror the Flutter version.
 
