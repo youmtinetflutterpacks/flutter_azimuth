@@ -147,9 +147,7 @@ class _ExapleAzimuthBodyAppState extends State<ExapleAzimuthBodyApp> {
 }
 
 class CompassBackground extends StatelessWidget {
-  const CompassBackground({
-    Key? key,
-  }) : super(key: key);
+  const CompassBackground({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -158,9 +156,7 @@ class CompassBackground extends StatelessWidget {
 }
 
 class CompassForeground extends StatelessWidget {
-  const CompassForeground({
-    Key? key,
-  }) : super(key: key);
+  const CompassForeground({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

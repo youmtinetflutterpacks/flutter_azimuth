@@ -3,44 +3,39 @@ description: Demonstrates how to use the flutter_azimuth plugin.
 
 publish_to: none
 
-version: 3.38.9
+version: 3.38.9+1
 
 environment:
-  sdk: ^3.10.8
+    sdk: ^3.10.8
 
 dependencies:
-  flutter:
-    sdk: flutter
+    flutter:
+        sdk: flutter
 
-  flutter_azimuth:
-    path: ../
+    flutter_azimuth:
+        path: ../
 
-  cupertino_icons: ^1.0.8
-
-flutter_native_splash:
-  color: "#000000"
-  image: images/icon-dark.png
+    cupertino_icons: ^1.0.8
+    google_fonts: ^8.0.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+    flutter_test:
+        sdk: flutter
 
-  flutter_lints: ^2.0.0
-  flutter_native_splash: ^2.4.7
-  flutter_launcher_icons: ^0.14.4
+    flutter_lints: ^2.0.0
+    flutter_native_splash: ^2.4.7
+    flutter_launcher_icons: ^0.14.4
 
-flutter_icons:
-  image_path: "images/icon-dark.png" 
-  android: true
-  ios: true
-  remove_alpha_ios: true
-  adaptive_icon_background: "#FF771089"
-  adaptive_icon_foreground: images/icon-dark.png
 
 flutter:
+    uses-material-design: true
 
-  uses-material-design: true
-
-  assets:
-    - assets/
- 
+    assets:
+        - assets/
+    fonts:
+        - family: Digital
+          fonts:
+              - asset: assets/digital7/digital7.ttf
+              - asset: assets/digital7/italic.ttf
+              - asset: assets/digital7/mono.ttf
+              - asset: assets/digital7/mono_italic.ttf

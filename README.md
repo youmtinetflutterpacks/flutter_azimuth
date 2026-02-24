@@ -1,4 +1,7 @@
 <div align="center">
+<div align="center">
+    <img src="https://raw.githubusercontent.com/youmtinetflutterpacks/flutter_azimuth/refs/heads/main/assets/flutter_azimuth.png" alt="flutter_azimuth logo"/>
+</div>
 
 [![pub package](https://img.shields.io/pub/v/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth)
 [![pub likes](https://img.shields.io/pub/likes/flutter_azimuth.svg)](https://pub.dev/packages/flutter_azimuth/score)

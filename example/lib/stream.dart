@@ -5,7 +5,7 @@ class StreamWidget<T> extends StatelessWidget {
   final Stream<T>? stream;
 
   const StreamWidget({Key? key, required this.child, required this.stream})
-      : super(key: key);
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,7 @@ class StreamWidget<T> extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.connectionState == ConnectionState.done) {
           return const Center(
-            child: CircularProgressIndicator(
-              value: 1,
-              color: Colors.red,
-            ),
+            child: CircularProgressIndicator(value: 1, color: Colors.red),
           );
         } else if (snapshot.connectionState == ConnectionState.none) {
           return errorConnection();
