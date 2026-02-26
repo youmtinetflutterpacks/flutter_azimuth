@@ -8,10 +8,10 @@
 [![pub points](https://img.shields.io/pub/points/flutter_azimuth.svg?color=blue)](https://pub.dev/packages/flutter_azimuth/score)
 [![platform](https://img.shields.io/badge/platform-flutter-blue)](https://flutter.dev)
 
-[![GitHub stars](https://img.shields.io/github/stars/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Stars)](https://github.com/ymrabti/flutter_azimuth/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Issues)](https://github.com/ymrabti/flutter_azimuth/issues)
-[![GitHub license](https://img.shields.io/github/license/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=License)](https://github.com/ymrabti/flutter_azimuth/blob/main/LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ymrabti/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Last%20Commit)](https://github.com/ymrabti/flutter_azimuth/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/youmtinetflutterpacks/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Stars)](https://github.com/youmtinetflutterpacks/flutter_azimuth/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/youmtinetflutterpacks/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Issues)](https://github.com/youmtinetflutterpacks/flutter_azimuth/issues)
+[![GitHub license](https://img.shields.io/github/license/youmtinetflutterpacks/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=License)](https://github.com/youmtinetflutterpacks/flutter_azimuth/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/youmtinetflutterpacks/flutter_azimuth.svg?style=flat&logo=github&colorB=&label=Last%20Commit)](https://github.com/youmtinetflutterpacks/flutter_azimuth/commits/main)
 
 
 [![Build status](https://github.com/ymrabti/flutter_azimuth/workflows/Publish%20to%20pub.dev/badge.svg?style=flat&logo=github&colorB=&label=Build)](https://github.com/youmtinetflutterpacks/flutter_azimuth)
@@ -21,8 +21,9 @@
 </div>
 
 Flutter plugin for reading the device azimuth to build compass-like experiences. Uses the available position sensors on Android and azimuth data on iOS.
-
-![Image](assets/demo.mp4)
+<div align="center">
+    <video src="assets/demo.mp4" width="300" controls autoplay loop></video>
+</div>
 
 ## Versioning policy
 
