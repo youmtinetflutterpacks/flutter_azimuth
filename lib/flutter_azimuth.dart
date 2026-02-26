@@ -20,8 +20,8 @@ class FlutterAzimuth {
   /// method channel azimuthStream
   static Stream<int?>? get azimuthStream {
     _azimuthValue ??= _eventChannel.receiveBroadcastStream().map<int?>(
-      (value) => value,
-    );
+          (value) => value,
+        );
 
     return _azimuthValue;
   }
