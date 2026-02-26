@@ -9,6 +9,7 @@
 .history
 .svn/
 demo/
+wrangler.jsonc
 # IntelliJ related
 *.iml
 *.ipr

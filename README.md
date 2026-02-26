@@ -22,7 +22,7 @@
 
 Flutter plugin for reading the device azimuth to build compass-like experiences. Uses the available position sensors on Android and azimuth data on iOS.
 <div align="center">
-    <video src="assets/demo.mp4" width="300" controls autoplay loop></video>
+    <video src="https://raw.githubusercontent.com/youmtinetflutterpacks/flutter_azimuth/refs/heads/main/assets/demo.mp4" width="300" controls autoplay loop></video>
 </div>
 
 ## Versioning policy
