@@ -4,5 +4,5 @@ flutter_launcher_icons:
     ios: true
     image_path: assets/logo.png
     remove_alpha_ios: true
-    adaptive_icon_background: "#ff0b1220"
+    adaptive_icon_background: "#0b1220"
     # adaptive_icon_foreground: assets/logo.png
