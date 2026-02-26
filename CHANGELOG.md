@@ -2,6 +2,8 @@
 - Update plugin version to 3.41.1+1 to mirror the Flutter version.
 - Add CI/CD workflow to publish to pub.dev on new releases.
 - Add Documentation for the package API.
+- Update example app to demonstrate the API and show how to use the package in a real app.
+- Update the example app design and logo to better reflect the package and its purpose.
 
 ## 3.41.1 - 2026-02-22
 - Update plugin version to 3.41.1 to mirror the Flutter version.

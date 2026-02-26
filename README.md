@@ -35,7 +35,7 @@ Add the package that matches your Flutter version:
 
 ```yaml
 dependencies:
-  flutter_azimuth: 3.41.1
+  flutter_azimuth: 3.41.1+1
 ```
 
 ## Features
@@ -203,7 +203,7 @@ class CompassForeground extends StatelessWidget {
 
 ## Issues
 
-Please file any issues, bugs or feature requests as an issue on our [GitHub](https://github.com/ymrabti/flutter_azimuth/issues) page. Commercial support is available, you can contact us at <hello@baseflow.com>.
+Please file any issues, bugs or feature requests as an issue on our [GitHub](https://github.com/ymrabti/flutter_azimuth/issues) page. Commercial support is available, you can contact us at <admin@youmti.net>.
 
 
 ## 🔗 More Packages

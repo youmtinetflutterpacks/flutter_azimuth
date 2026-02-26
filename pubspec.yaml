@@ -14,7 +14,7 @@ topics:
   - sensor
 
 environment:
-  sdk: ^3.10.8
+  sdk: ^2.18.0
   flutter: ">=1.10.0"  
 
 dependencies:
