@@ -1,9 +1,9 @@
 import 'dart:developer';
-import 'dart:math' as math;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_azimuth/flutter_azimuth.dart';
 import 'package:flutter_azimuth_example/audio_bytes.dart';
+import 'package:flutter_azimuth_example/settings.dart';
 import 'package:flutter_azimuth_example/stream.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
@@ -46,6 +46,7 @@ class _CompassScreenState extends State<CompassScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final AudioPlayer _audioPlayer = AudioPlayer();
+  AudioAsset _selectedAudio = AudioAsset.tick_01;
   double _heading = 127.0;
   bool _playSoundOnChange = true;
   bool _playHapticsOnChange = false;
@@ -75,7 +76,7 @@ class _CompassScreenState extends State<CompassScreen>
         if (_playSoundOnChange) {
           log('Heading changed: ${_heading.toInt()}°', name: 'FlutterAzimuth');
           await _audioPlayer.play(
-            BytesSource(EmbeddedAudios.tick_01),
+            BytesSource(_selectedAudio.bytes),
             volume: 0.5,
           );
         }
@@ -183,7 +184,7 @@ class _CompassScreenState extends State<CompassScreen>
             const SizedBox(width: 16),
             ElevatedButton(
               onPressed: () => _audioPlayer.play(
-                BytesSource(EmbeddedAudios.tick_01),
+                BytesSource(_selectedAudio.bytes),
                 volume: 0.5,
               ),
               style: ElevatedButton.styleFrom(
@@ -196,6 +197,7 @@ class _CompassScreenState extends State<CompassScreen>
             ),
           ],
         ),
+        _tickSection(),
         SwitchListTile.adaptive(
           contentPadding: EdgeInsets.zero,
           title: const Text(
@@ -239,6 +241,33 @@ class _CompassScreenState extends State<CompassScreen>
               _playHapticsOnChange = newValue;
             });
           },
+        ),
+      ],
+    );
+  }
+
+  Widget _tickSection() {
+    return Row(
+      spacing: 12,
+      children: [
+        Text(
+          'Select Tick Sound:',
+          style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500),
+        ),
+        Expanded(
+          child: DropdownButton(
+            enableFeedback: true,
+            value: _selectedAudio,
+            isExpanded: true,
+            items: AudioAsset.values.map((e) {
+              return DropdownMenuItem(value: e, child: Text(e.name));
+            }).toList(),
+            onChanged: (AudioAsset? newValue) {
+              setState(() {
+                _selectedAudio = newValue ?? AudioAsset.tick_01;
+              });
+            },
+          ),
         ),
       ],
     );
@@ -307,35 +336,38 @@ class _CompassScreenState extends State<CompassScreen>
         ),
         const Spacer(),
         // Sensor Status Card
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: haveSensor != 0
-                  ? const Color(0xFF111827)
-                  : Colors.redAccent.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white10),
-            ),
-            child: Row(
-              spacing: 12,
-              children: [
-                if (haveSensor != 0)
-                  const Icon(
-                    Icons.check_circle,
-                    color: Color(0xFF29B6F6),
-                    size: 24,
-                  )
-                else
-                  const Icon(Icons.cancel, color: Colors.redAccent, size: 24),
-                Column(
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          decoration: BoxDecoration(
+            color: haveSensor != 0
+                ? const Color(0xFF111827)
+                : Colors.redAccent.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.white10),
+          ),
+          child: Row(
+            spacing: 12,
+            children: [
+              if (haveSensor != 0)
+                const Icon(
+                  Icons.check_circle,
+                  color: Color(0xFF29B6F6),
+                  size: 24,
+                )
+              else
+                const Icon(Icons.cancel, color: Colors.redAccent, size: 24),
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (haveSensor != 0)
                       Text(
                         'Sensor Status: Active',
                         style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                        maxLines: 2,
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
                       )
                     else
                       Text(
@@ -345,17 +377,18 @@ class _CompassScreenState extends State<CompassScreen>
                           color: Colors.redAccent,
                         ),
                       ),
-                    Text(
-                      'Accuracy: High',
-                      style: GoogleFonts.inter(
-                        color: Colors.white54,
-                        fontSize: 12,
+                    if (haveSensor != 0)
+                      Text(
+                        'Accuracy: High',
+                        style: GoogleFonts.inter(
+                          color: Colors.white54,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         const SizedBox(height: 32),
@@ -408,116 +441,4 @@ class _CompassScreenState extends State<CompassScreen>
       haveSensor = haveSensor;
     });
   }
-}
-
-class CompassPainter extends CustomPainter {
-  final double heading;
-  CompassPainter({required this.heading});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.width / 2;
-
-    // 1. Draw Outer Ring
-    final ringPaint = Paint()
-      ..color = const Color(0xFF02569B).withValues(alpha: 0.3)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
-    canvas.drawCircle(center, radius, ringPaint);
-
-    // 2. Draw Active Arc (Secondary Color)
-    final arcPaint = Paint()
-      ..color = const Color(0xFF13B9FD)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 4
-      ..strokeCap = StrokeCap.round;
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -math.pi / 2,
-      (heading * math.pi / 180),
-      false,
-      arcPaint,
-    );
-
-    // 3. Draw Tick Marks and Labels
-    for (int i = 0; i < 360; i += 10) {
-      final angle = (i - 90) * math.pi / 180;
-      final isMajor = i % 90 == 0;
-      final tickLength = isMajor ? 12.0 : 6.0;
-
-      final p1 = Offset(
-        center.dx + (radius - 5) * math.cos(angle),
-        center.dy + (radius - 5) * math.sin(angle),
-      );
-      final p2 = Offset(
-        center.dx + (radius - 5 - tickLength) * math.cos(angle),
-        center.dy + (radius - 5 - tickLength) * math.sin(angle),
-      );
-
-      final tickPaint = Paint()
-        ..color = isMajor ? const Color(0xFF13B9FD) : Colors.white24
-        ..strokeWidth = isMajor ? 2 : 1;
-
-      canvas.drawLine(p1, p2, tickPaint);
-
-      // Draw N, E, S, W labels
-      if (isMajor) {
-        final label = _getDirection(i);
-        final textPainter = TextPainter(
-          text: TextSpan(
-            text: label,
-            style: GoogleFonts.inter(
-              color: const Color(0xFF13B9FD),
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
-          textDirection: TextDirection.ltr,
-        )..layout();
-
-        final textOffset = Offset(
-          center.dx + (radius - 35) * math.cos(angle) - (textPainter.width / 2),
-          center.dy +
-              (radius - 35) * math.sin(angle) -
-              (textPainter.height / 2),
-        );
-        textPainter.paint(canvas, textOffset);
-      }
-    }
-
-    // 4. Draw Needle
-    canvas.save();
-    canvas.translate(center.dx, center.dy);
-    canvas.rotate(heading * math.pi / 180);
-
-    final needlePath = Path()
-      ..moveTo(0, -radius + 40) // Tip
-      ..lineTo(10, 0)
-      ..lineTo(0, 20)
-      ..lineTo(-10, 0)
-      ..close();
-
-    final needlePaint = Paint()
-      ..shader = const LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFF13B9FD), Color(0xFF02569B)],
-      ).createShader(Rect.fromLTWH(-10, -radius + 40, 20, radius));
-
-    canvas.drawPath(needlePath, needlePaint);
-    canvas.restore();
-  }
-
-  String _getDirection(int angle) {
-    if (angle == 0) return 'N';
-    if (angle == 90) return 'E';
-    if (angle == 180) return 'S';
-    if (angle == 270) return 'W';
-    return '';
-  }
-
-  @override
-  bool shouldRepaint(covariant CompassPainter oldDelegate) =>
-      oldDelegate.heading != heading;
 }
