@@ -103,43 +103,46 @@ class _ExapleAzimuthBodyAppState extends State<ExapleAzimuthBodyApp> {
         middle: Text("SensorType: $sensorType"),
       ),
       child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            StreamWidget<int?>(
-              stream: FlutterAzimuth.azimuthStream,
-              child: (snapshot) {
-                /* double size2 = 300.0;
-                  var factor = (13.5 / 50); */
-                return Column(
-                  children: [
-                    Hero(
-                      tag: 'fluttercompass',
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          const CompassBackground(),
-                          RotationTransition(
-                            turns: AlwaysStoppedAnimation(snapshot! / 360),
-                            child: const CompassForeground(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        RotationTransition(
-                          turns: AlwaysStoppedAnimation(-snapshot / 360),
-                          child: const CompassBackground(),
+        child: StreamWidget<int?>(
+          stream: FlutterAzimuth.azimuthStream,
+          child: (snapshot) {
+            /* double size2 = 300.0;
+              var factor = (13.5 / 50); */
+            return Column(
+              spacing: 20,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children:
+                  [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            const CompassBackground(),
+                            RotationTransition(
+                              turns: AlwaysStoppedAnimation(snapshot! / 360),
+                              child: const CompassForeground(),
+                            ),
+                          ],
                         ),
-                        const CompassForeground(),
-                      ],
-                    ),
-                  ],
-                );
-              },
-            ),
-          ],
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            RotationTransition(
+                              turns: AlwaysStoppedAnimation(-snapshot / 360),
+                              child: const CompassBackground(),
+                            ),
+                            const CompassForeground(),
+                          ],
+                        ),
+                      ]
+                      .map(
+                        (e) => Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: e,
+                        ),
+                      )
+                      .toList(),
+            );
+          },
         ),
       ),
     );
