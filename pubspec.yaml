@@ -1,7 +1,7 @@
 name: flutter_azimuth
 description: A Flutter Compass Tools Implementation, is the plugin that measure The Azimuth is the angle between magnetic north, and the the orientatin of the device.
 
-version: 3.41.1+2
+version: 3.41.1+3
 repository: https://github.com/youmtinetflutterpacks/flutter_azimuth
 homepage: https://github.com/youmtinetflutterpacks/flutter_azimuth
 documentation: https://flutter-azimuth-doc.youmti.net

@@ -1,4 +1,7 @@
 ## 3.41.1+2 - 2026-02-26
+- Hotfix.
+
+## 3.41.1+2 - 2026-02-26
 - Update plugin version to 3.41.1+2 to mirror the Flutter version.
 - Update example app functionality to demonstrate the API and show how to use the package in a real app.
 - Update example app design and logo to better reflect the package and its purpose.
